@@ -10,7 +10,7 @@ APP_VERSION = "v3.8"
 
 st.set_page_config(page_title="AI Analyzer", page_icon="🤖", layout="wide")
 st.title("🤖 AI Data Analyzer — Generator Fault Detection")
-api_key = st.secrets("API_KEY")
+api_key = st.secrets.get("API_KEY")
 if not api_key:
     api_key = st.sidebar.text_input("Groq API key (if not in secrets)", type="password")
 client = Groq(api_key=api_key) 
